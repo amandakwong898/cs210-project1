@@ -1,0 +1,61 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<25>>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<5>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Model a Percolation System): This was a very challenging problem
+   for me at first because I felt like I didn't fully understood what it was
+   asking. First, I initialized the instance variables and worked on code for
+   the constructor. I then found a formula for the encode method. I worked on
+   the open method, and later on realized that when dealing with the neighbor-
+   ing sites, they have to go first for efficiency reasons. At the end of the
+   method I set open[i][j] to true and incremented my variable openSites by 1.
+   For the isOpen method, I just returned open[i][j]. For the isFull method, I
+   initially only returned uf1.connected(0, encode(i, j), but then reread the
+   checklist and saw that the site had to be open too (thus the isOpen method
+   had to be implemented). For all the open, isOpen, and isFull methods, I
+   included an error exception at the beginning in case i and j were out of
+   bounds. For numberOfOpenSites, I just returned openSites, and for percolates
+   I checked if the source (0) is connected to the sink (N^2 + 1).
+
+   Problem 2 (Estimate Percolation Threshold): After throwing the Illegal
+   Argument Exception and initializing instance variables T and p, I
+   created a for loop that iterated T times, and created percolation
+   of type Percolation that created an NxN array. While percolation
+   was not yet percolated, I declared ints r and c as random integer
+   from 0 to N (inclusive). I then called the open method from Percolation.java
+   and outside the while loop, set p[i] equal to the number of open sites
+   divided by the entire array. In the mean and standard deviation method, I
+   used the StdStats library and called the mean and stddev methods with p
+   as the parameter. For confidenceLow and confidenceHigh, I calculated the
+   confidenceFraction by referring to the checklist and added/substracted
+   that from the mean.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS210 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Swami Iyer       Professor      Helped me understand how to approach
+                                   certain methods in Problem 1
+   Suncharn Pipithkul    SI        Helped debug parts of my Problem 1 when I
+                                   was getting out of bounds messages
+   Raymond Huang  FSC Peer Mentor  Helped illustrate backwash problem
+   James Michaud       TA          Helped me understand why I was getting
+                                   my out of bounds error for Problem 2
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   This assignment was really challenging, but it paid off and was rewarding
+   in the end when everything worked out well.
